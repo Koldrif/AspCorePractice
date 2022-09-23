@@ -23,3 +23,15 @@ public static class ServiceProviderExstensions
         collection.AddTransient<TimeService>();
     }
 }
+
+public class TimeMessage
+{
+    private readonly ITimeService _timeService;
+
+    public TimeMessage(ITimeService timeService)
+    {
+        _timeService = timeService;
+    }
+
+    public string GetTime() => _timeService.GetTime();
+}
