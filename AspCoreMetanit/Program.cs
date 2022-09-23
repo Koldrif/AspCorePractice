@@ -3,8 +3,9 @@ using AspCoreMetanit;
 var builder = WebApplication.CreateBuilder();
  
 var services = builder.Services;
+services.AddTimeService();
 
-services.AddTransient<ITimeService, ShortTimeService>();
+// services.AddTransient<ITimeService, ShortTimeService>();
 //services.AddTransient<TimeService>();
 
 var app = builder.Build();
